@@ -1,0 +1,311 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #d1d5db;
+    background-color: #343541;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    font-family:'Times New Roman', Times, serif
+}
+.container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.sidebar {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    width: 25%;
+    gap: 120px;
+    background-color: #202123;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    height: 100%;
+    transition: 0.3s ease;
+} 
+.chat-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    
+}
+h1 {
+    color: #d1d5db;
+    margin: 20px 0;
+    font-size: 1.5rem;
+    text-align: center;
+}
+#responses {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #444654;
+}
+#query-form {
+    padding: 10px;
+    background-color: #40414f;
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #565869;
+}
+.icon{
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    background-color: #40414f;
+}
+.icon i{
+    cursor: pointer;
+}
+#prompt {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #40414f;
+    color: #d1d5db;
+    resize: none;
+    outline: none;
+}
+button {
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    background-color: #19c37d;
+    color: white;
+    font-size: 1rem;
+    margin-left: 10px;
+    flex-shrink: 0;
+}
+button:hover {
+    background-color: #16a36d;
+}
+.delete:hover,.stop:hover{
+    background-color: rgb(240, 63, 63);
+}
+.response-block {
+    margin: 10px 50px;
+    padding: 15px;
+    border-radius: 8px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    background-color: #444654;
+}
+.response-block.user {
+    background-color: #343541;
+    align-self: flex-end;
+}
+.response-block .icon {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+.response-block h2 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #19c37d;
+}
+.response-block pre {
+    margin: 10px 30px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.9rem;
+    font-family: inherit;
+    color: #d1d5db;
+}  
+.loading {
+    display: block;
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #19c37d;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}  
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+.gemma,.phi3,.delete{
+    margin-top: 20px;
+    width: 120px;
+    align-self: center;
+    text-align: center;
+    background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+}
+.gemma:hover,.phi3:hover{
+    background-image: linear-gradient(120deg, #d4fc79 0%, #96e6a1 100%);
+}
+.delete:hover{
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+.stop{
+    background-image: linear-gradient(to top, #ff0844 0%, #ffb199 100%);
+}
+.delhistory{
+    align-self: center;
+}
+.delete{
+    width: 40px;
+    align-self: center;
+    background-image: linear-gradient(45deg, #8baaaa 0%, #ae8b9c 100%);
+}
+.buttons h3{
+    text-align: center;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+img{
+    width: 20px;
+}
+.submit img{
+    padding: 1px;
+    margin-top: 2px;
+    align-self: center;
+}
+.sidebar.active {
+    transition: 0.3s ease-in-out;
+    display: flex; 
+}
+
+/* Responsive css */
+
+
+@media (max-width: 1200px) {
+    h1 {
+        font-size: 1.3rem;
+    }
+    button {
+        font-size: 0.9rem;
+        padding: 8px 8px;
+    }
+    .gemma, .phi3 {
+        width: 100px;
+    }
+    .delete {
+        width: 35px;
+    }
+}
+
+@media (max-width: 992px) {
+    h1 {
+        font-size: 1.1rem;
+    }
+    button {
+        font-size: 0.8rem;
+        padding: 6px 6px;
+    }
+    .gemma, .phi3 {
+        width: 90px;
+    }
+    .delete {
+        width: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1rem;
+    }
+    button {
+        font-size: 0.7rem;
+        padding: 5px 5px;
+    }
+    .gemma, .phi3 {
+        width: 80px;
+    }
+    .delete {
+        width: 25px;
+    }
+}
+
+@media (max-width: 576px) {
+    h1 {
+        font-size: 0.9rem;
+    }
+    button {
+        font-size: 0.6rem;
+        padding: 4px 4px;
+    }
+    .gemma, .phi3 {
+        width: 70px;
+    }
+    .delete {
+        width: 20px;
+    }
+
+    .buttons h3 {
+        font-size: 0.8rem;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+        .sidebar h1 {
+        font-size: 0.7rem;
+    }
+
+    .gemma, .phi3, .delete {
+        width: 40px;
+        align-self: center;
+        text-align: center;
+        font-size: 0.4rem;
+    }
+    .delete {
+        width: 20px;
+        height: 20px;
+        padding: 1px;
+    }
+
+    .buttons h3 {
+        font-size: 0.5rem;
+        text-align: center;
+    }
+
+    #prompt {
+        font-size: 0.8rem;
+        padding: 8px;
+    }
+
+    .submit img, .stop img {
+        width: 16px;
+    }
+
+    .stop, .submit {
+        padding: 2px 4px;
+        margin-left: 5px;
+    }
+    .loading {
+        display: block;
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #19c37d;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        animation: spin 1s linear infinite;
+        margin: 5px auto;
+    }  
+    .response-block{
+        width: 100%;
+        justify-content: space-between;
+    }
+    .response-block pre{
+        width: 100%;
+    }
+}  

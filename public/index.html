@@ -1,0 +1,71 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatBot</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="style.css" rel="stylesheet"/>
+</head>
+<body>
+    <div class="container">
+        <button class="icon"><i class="fa fa-bars"></i></button>
+        <div class="sidebar">
+            <h1>Choose Model</h1>
+            <div class="buttons">
+                <button class="gemma" data-model="gemma2:2b">Gemma2:2b</button>
+                <button class="phi3" data-model="phi3">Phi3</button>
+                <h3></h3>
+            </div>
+            <div class="delhistory">
+                <button class="delete"><i class="fa fa-trash-o"></i></button>
+            </div>
+        </div>
+        <div class="chat-container">
+            <div id="responses">
+                <div class="response-block">
+                    <span class="icon">🤖</span>
+                    <pre>Hello, How can I help you?</pre>
+                </div>
+            </div>
+            <form id="query-form">
+                <textarea id="prompt" rows="1" placeholder="Send a message..."></textarea>
+                <button class="stop" type="button"><img src="circle-stop-solid.svg"/></button>
+                <button class="submit"><img src="send.png"/></button>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
